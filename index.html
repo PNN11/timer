@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      .toast {
+        position: fixed;
+        left: 50%;
+        top: -50px;
+        opacity: 0;
+        width: 350px;
+        padding: 16px;
+        transform: translateX(-50%);
+        transition: all 1s;
+        text-align: center;
+        border: 2px solid #72acd3;
+        border-radius: 16px;
+      }
+
+      .toast-visible {
+        top: 28px;
+        opacity: 1;
+      }
+
+      .timer-wrapper {
+        max-width: 640px;
+        margin: 128px auto 0 auto;
+        border: 4px solid gray;
+        padding: 24px;
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+        border-radius: 16px;
+      }
+
+      .timer-wrapper > div {
+        width: 100%;
+      }
+
+      .timer-wrapper > div > input {
+        width: 100%;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .buttons > button {
+        width: 25%;
+      }
+
+      .timer {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="toast" id="toast"></div>
+    <main class="timer-wrapper">
+      <div id="timer" class="timer"></div>
+      <div>
+        <input id="time-input" type="number" placeholder="Enter hours count" min="0" />
+      </div>
+      <div class="buttons">
+        <button id="start-button">start</button>
+        <button id="reset-button">reset</button>
+        <button id="stop-button">stop</button>
+      </div>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
